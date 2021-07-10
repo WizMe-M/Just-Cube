@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Goal
-  - Goal2
   - DeathZone
   - Enemy
   - RestartButton
+  - Spawner
   layers:
   - Default
   - TransparentFX
