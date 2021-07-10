@@ -5,18 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(other.gameObject);
-        }
+        if (collision.gameObject.tag == "Enemy")
+            Destroy(collision.gameObject);
     }
 
-    //?????
     public void Again()
     {
-        Debug.Log("Что происходит? Где? Когда? РЕСТАРТ ИГРЫ!");
+        Debug.Log("OK");
         SceneManager.LoadScene(0);
     }
 }

@@ -10,10 +10,4 @@ public class ActivatePanel : MonoBehaviour
         GameObject panel = GameObject.FindWithTag("Panel");
         panel.SetActive(true);
     }
-
-    public void Again()
-    {
-        Debug.Log("OK");
-        SceneManager.LoadScene(0);
-    }
 }
