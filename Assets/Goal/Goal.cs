@@ -6,13 +6,11 @@ public class Goal : MonoBehaviour
     private void Awake()
     {
         _goalLogic = new GoalLogic();
-        transform.position = _goalLogic.GetNewPosition();
+        Switch();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Switch()
     {
-        if (collision.gameObject.CompareTag("Player") == true)
-        {
-            transform.position = _goalLogic.GetNewPosition();
-        }
+        Debug.Log("Goal switching");
+        transform.position = _goalLogic.GetNewPosition();
     }
 }
