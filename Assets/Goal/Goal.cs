@@ -2,15 +2,17 @@
 
 public class Goal : MonoBehaviour
 {
+    private ScoreSystem _scoring;
     private GoalLogic _goalLogic;
     private void Awake()
     {
+        _scoring = new ScoreSystem();
         _goalLogic = new GoalLogic();
-        Switch();
+        transform.position = _goalLogic.GetNewPosition();
     }
     public void Switch()
     {
-        Debug.Log("Goal switching");
+        _scoring.IncrementScore();
         transform.position = _goalLogic.GetNewPosition();
     }
 }

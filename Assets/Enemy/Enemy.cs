@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyPhysic : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed = 2f;
 
-    private void FixedUpdate()
+    private void Update()
     {
         transform.rotation *= Quaternion.Euler(0f, 0f, 1f);
         transform.position = new Vector2(transform.position.x + _speed * Time.deltaTime, transform.position.y);

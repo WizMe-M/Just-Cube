@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - RestartButton
   - Spawner
+  - Score
   layers:
   - Default
   - TransparentFX

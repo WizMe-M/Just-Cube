@@ -5,20 +5,22 @@
 /// </summary>
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerPhysic _physic;
+    private Physic _physic;
+    private Simulation _simulation;
     [SerializeField] private GameObject _goal;
     private void Start()
     {
-        _goal = GameObject.FindGameObjectWithTag("Goal");
-        _physic = new PlayerPhysic(_goal.transform.position, gameObject);
+        _goal = GameObject.FindGameObjectWithTag(nameof(Goal));
+        _physic = new Physic(2f, Quaternion.Euler(0f, 0f, 1.9f), _goal.transform.position);
+        _simulation = new Simulation(gameObject, _physic);
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             _physic.InverseVector();
         }
-        _physic.MoveToTarget();
+        _simulation.RedrawObject();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

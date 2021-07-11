@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DeathZoneTrigger : MonoBehaviour
+public class DeathZone : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D other)
     {

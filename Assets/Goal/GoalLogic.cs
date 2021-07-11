@@ -7,6 +7,7 @@ public class GoalLogic
         Up,
         Down
     }
+
     [SerializeField] private GoalSwitcher _switcher = GoalSwitcher.Up;
 
     public GoalLogic()
